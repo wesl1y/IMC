@@ -53,14 +53,31 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['altura']) && isset($_GET
 ?>
 
 
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>IMC</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+
 </head>
+
 <body>
-    
+
+    <header>
+        <div id="div-title">
+            <h1 id="title">Calculo de IMC</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="templates/sobre-nos.php">Sobre Nós</a></li>
+                <li><a href="templates/saiba-mais.php">Saiba Mais</a></li>
+            </ul>
+        </nav>
+    </header>
 </body>
-</html>
