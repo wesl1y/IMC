@@ -118,6 +118,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['altura']) && isset($_GET
 
                 <input id="calc-button" type="submit" value="CALCULAR">
             </form>
+            <a href="index.php"><input id="clear-button" type="submit" value="LIMPAR"></a> <!-- botão de limpar aq-->
         </div>
     </div>
 </body>
