@@ -9,6 +9,24 @@ function calcularGorduraCorporal($sexo, $cintura, $altura, $pescoco = 0, $quadri
         return null; 
     }
 }
+
+function obterStatusIMC($imc) {
+    global $data;
+    switch (true) {
+        case ($imc < 18.50):
+            return ["status" => $data[0]['status'], "description" => $data[0]["description"], "color" => $data[0]["color"]];
+        case ($imc >= 18.50 && $imc <= 24.99):
+            return ["status" => $data[1]['status'], "description" => $data[1]["description"], "color" => $data[1]["color"]];
+        case ($imc >= 25.00 && $imc <= 29.99):
+            return ["status" => $data[2]['status'], "description" => $data[2]["description"], "color" => $data[2]["color"]];
+        case ($imc >= 30.00 && $imc <= 34.99):
+            return ["status" => $data[3]['status'], "description" => $data[3]["description"], "color" => $data[3]["color"]];
+        case ($imc >= 35.00 && $imc <= 39.99):
+            return ["status" => $data[4]['status'], "description" => $data[4]["description"], "color" => $data[4]["color"]];
+        default:
+            return ["status" => $data[5]['status'], "description" => $data[5]["description"], "color" => $data[5]["color"]];
+    }
+}
 ?>
 
 
