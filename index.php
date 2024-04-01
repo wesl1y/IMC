@@ -148,6 +148,26 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['altura']) && isset($_GET
                             }
 
                             ?>
+                    <div id="imc-table">
+                        <div class="imc-color" id="abaixo">
+                            <p>ABAIXO DO NORMAL</p>
+                        </div>
+                        <div class="imc-color" id="normal">
+                            <p>PESO NORMAL</p>
+                        </div>
+                        <div class="imc-color" id="sobrepeso">
+                            <p>SOBREPESO</p>
+                        </div>
+                        <div class="imc-color" id="obesidade1">
+                            <p>OBESIDADE I</p>
+                        </div>
+                        <div class="imc-color" id="obesidade2">
+                            <p>OBESIDADE II</p>
+                        </div>
+                        <div class="imc-color" id="obesidade3">
+                            <p>OBESIDADE III</p>
+                        </div>
+                    </div>
 
                 </div>
 
