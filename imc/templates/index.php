@@ -1,5 +1,12 @@
 <?php
-include_once("data/data.php");
+$titlePage = "Cálculo de IMC";
+$titleNav1 = "Sobre Nós";
+$titleNav2 = "Saiba Mais";
+$nav1 = "sobre-nos.php";
+$nav2 = "saiba-mais.php";
+include_once("header.php");
+include_once("../data/data.php");
+
 function calcularGorduraCorporal($sexo, $cintura, $altura, $pescoco = 0, $quadril = 0) {
     if ($sexo == "masculino") {
         return 495 / (1.0324 - 0.19077 * (log10($cintura - $pescoco)) + 0.15456 * (log10($altura*100))) - 450;
@@ -9,6 +16,9 @@ function calcularGorduraCorporal($sexo, $cintura, $altura, $pescoco = 0, $quadri
         return null; 
     }
 }
+
+
+
 
 function obterStatusIMC($imc) {
     global $data;
@@ -27,6 +37,12 @@ function obterStatusIMC($imc) {
             return ["status" => $data[5]['status'], "description" => $data[5]["description"], "color" => $data[5]["color"]];
     }
 }
+
+
+$status = "";
+$color = "rgb(196, 174, 174)";
+$description = "";
+
 
 if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['altura']) && isset($_GET['peso']) && isset($_GET['sexo']) && isset($_GET['cintura']) && isset($_GET['idade'])) {
     $sexo = $_GET['sexo'];
@@ -51,35 +67,6 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['altura']) && isset($_GET
     $color = $statusIMC["color"];
 }
 ?>
-
-
-
-<!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IMC</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-
-
-</head>
-
-<body>
-
-    <header>
-        <div id="div-title">
-            <h1 id="title">Calculo de IMC</h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="templates/sobre-nos.php">Sobre Nós</a></li>
-                <li><a href="templates/saiba-mais.php">Saiba Mais</a></li>
-            </ul>
-        </nav>
-    </header>
 
     <div id="content">
 
@@ -118,8 +105,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['altura']) && isset($_GET
 
                 <input id="calc-button" type="submit" value="CALCULAR">
             </form>
-            <a href="index.php"><input id="clear-button" type="submit" value="LIMPAR"></a> <!-- botão de limpar aq-->
 
+            <a href="index.php"><input id="clear-button" type="submit" value="LIMPAR"></a> <!-- botão de limpar aq-->
             <div id="result-main">
                 <div id="result-content">
                     <?php if (isset($imc) && isset($status)): ?>
@@ -148,6 +135,9 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['altura']) && isset($_GET
                             }
 
                             ?>
+
+
+
                     <div id="imc-table">
                         <div class="imc-color" id="abaixo">
                             <p>ABAIXO DO NORMAL</p>
@@ -172,6 +162,106 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['altura']) && isset($_GET
                 </div>
 
             </div>
+            <div id="chart_div" style="width: 900px; height: 500px; background-color: #0F0F0F"></div>
+
         </div>
+
+
     </div>
+
+
+
+
+
+
+
+
 </body>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+
+    // Load the Visualization API and the corechart package.
+    google.charts.load('current', { 'packages': ['corechart'] });
+
+    // Set a callback to run when the Google Visualization API is loaded.
+    google.charts.setOnLoadCallback(drawChart);
+
+
+    function drawChart() {
+
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Topping');
+        data.addColumn('number', 'Slices');
+        data.addRows([
+            ['Gordura', <?=$gordura_corporal?>],
+            ['Massa Magra e Resíduos Corporais', <?=(100-$gordura_corporal)?>],
+
+        ]);
+
+        function setChartOptions() {
+        var screenWidth = window.innerWidth;
+        var options = {
+            'title': '',
+            'titleTextStyle': {
+                'color': 'white'
+            },
+            'width': 425,
+            'height': 300,
+            'backgroundColor': 'transparent',
+            'color': "white",
+            'legend': {
+                'textStyle': {
+                    'color': 'white'
+                }
+            }
+        };
+
+    // Se a largura da tela for menor ou igual a 1760px, ajuste a largura do gráfico
+
+    if (screenWidth >1600 && screenWidth <= 1900 ) {
+        options.width = 450;
+    }
+    else if (screenWidth > 900 && screenWidth < 1600) {
+        options.width = 900;
+        options.height = 900;
+
+
+    }
+    else if (screenWidth > 600 && screenWidth < 1600) {
+        options.width = 700;
+        options.height = 700;
+
+
+    }
+    else if (screenWidth > 400 && screenWidth <= 600) {
+        options.width = 600;
+        options.height = 600;
+
+
+    }
+
+    else if (screenWidth > 280 && screenWidth <= 400) {
+        options.width = 400;
+        options.height = 400;
+
+
+    }
+
+    return options;
+}
+
+// Use a função setChartOptions para definir as opções do gráfico
+var options = setChartOptions();
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+    }
+</script>
+
+
+
+
+
+</html>
