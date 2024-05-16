@@ -41,7 +41,6 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['altura']) && isset($_GET
     $cintura = $_GET['cintura'];
     $idade = $_GET['idade'];
 
-
     $quadril = isset($_GET['quadril']) ? $_GET['quadril'] : 0;
     $pescoco = isset($_GET['pescoco']) ? $_GET['pescoco'] : 0;
 
