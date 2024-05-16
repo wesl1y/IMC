@@ -1,5 +1,4 @@
 <?php
-include_once("data/data.php");
 function calcularGorduraCorporal($sexo, $cintura, $altura, $pescoco = 0, $quadril = 0) {
     if ($sexo == "masculino") {
         return 495 / (1.0324 - 0.19077 * (log10($cintura - $pescoco)) + 0.15456 * (log10($altura*100))) - 450;
@@ -26,29 +25,6 @@ function obterStatusIMC($imc) {
         default:
             return ["status" => $data[5]['status'], "description" => $data[5]["description"], "color" => $data[5]["color"]];
     }
-}
-
-if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['altura']) && isset($_GET['peso']) && isset($_GET['sexo']) && isset($_GET['cintura']) && isset($_GET['idade'])) {
-    $sexo = $_GET['sexo'];
-    $altura = $_GET['altura'] / 100;
-    $peso = $_GET['peso'];
-    $cintura = $_GET['cintura'];
-    $idade = $_GET['idade'];
-
-
-    $quadril = isset($_GET['quadril']) ? $_GET['quadril'] : 0;
-    $pescoco = isset($_GET['pescoco']) ? $_GET['pescoco'] : 0;
-
-    $gordura_corporal = calcularGorduraCorporal($sexo, $cintura, $altura, $pescoco, $quadril);
-    $gordura_corporal = number_format($gordura_corporal, 2);
-
-    $imc = $peso / ($altura * $altura);
-    $imc = number_format($imc, 2);
-
-    $statusIMC = obterStatusIMC($imc);
-    $status = $statusIMC["status"];
-    $description = $statusIMC["description"];
-    $color = $statusIMC["color"];
 }
 ?>
 
