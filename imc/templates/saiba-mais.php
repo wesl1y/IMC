@@ -2,9 +2,11 @@
       $titlePage = "Saiba Mais";
       $titleNav1 = "Cáculo do IMC";
       $titleNav2 = "Sobre Nós";
+      $titleNav3 = "Mais Você";
+
       $nav1 = "index.php";
       $nav2 = "sobre-nos.php";
-      
+      $nav3 = "mais-voce.php";     
       include_once("header.php")
   
   ?>

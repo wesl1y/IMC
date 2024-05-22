@@ -2,8 +2,10 @@
 $titlePage = "Cálculo de IMC";
 $titleNav1 = "Sobre Nós";
 $titleNav2 = "Saiba Mais";
+$titleNav3 = "Mais Você";
 $nav1 = "sobre-nos.php";
 $nav2 = "saiba-mais.php";
+$nav3 = "mais-voce.php";
 include_once("header.php");
 include_once("../data/data.php");
 
