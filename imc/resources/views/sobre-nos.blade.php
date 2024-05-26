@@ -1,13 +1,13 @@
-<?php
 
-    $titlePage = "Sobre Nós";
-    $titleNav1 = "Cáculo do IMC";
-    $titleNav2 = "Saiba Mais";
-    $nav1 = "index.php";
-    $nav2 = "saiba-mais.php";
-    include_once("header.php");
-
-?>
+@include('components.header', [
+    'titlePage' => 'Sobre Nós',
+    'nav1' => '/',
+    'titleNav1' => 'Home',
+    'nav2' => '/saiba-mais',
+    'titleNav2' => 'Saiba Mais',
+    'nav3' => '/mais-voce', 
+    'titleNav3' => 'Mais você',
+])
     <div id="sn-main">
 
         <h2>
@@ -33,6 +33,7 @@
         </div>
         <div class = "sn-content">
             <h3>Back-End:</h3>
+            <p class="sn-P">Everton De Farias Ribeiro</p>
             <p class="sn-P">Weslly Vitor Gomes Rocha Silva</p>
         </div>
         <div class = "sn-content">

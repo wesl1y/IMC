@@ -1,13 +1,13 @@
-  <?php 
-      $titlePage = "Saiba Mais";
-      $titleNav1 = "Cáculo do IMC";
-      $titleNav2 = "Sobre Nós";
-      $nav1 = "index.php";
-      $nav2 = "sobre-nos.php";
-      
-      include_once("header.php")
-  
-  ?>
+
+  @include('components.header', [
+    'titlePage' => 'Saiba Mais',
+    'nav1' => '/',
+    'titleNav1' => 'Home',
+    'nav2' => '/sobre-nos',
+    'titleNav2' => 'Sobre Nós',
+    'nav3' => '/mais-voce', 
+    'titleNav3' => 'Mais Você',
+])
 
 
     <div id="main-sm">
