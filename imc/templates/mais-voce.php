@@ -3,10 +3,11 @@
     $titleNav1 = "Home";
     $titleNav2 = "Sobre Nós";
     $titleNav3 = "Saiba Mais";
-
     $nav1 = "index.php";
     $nav2 = "sobre-nos.php";
     $nav3 = "saiba-mais.php";
+
+    
 
     include_once("header.php")
 

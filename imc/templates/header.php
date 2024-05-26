@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -21,7 +22,7 @@
             <ul>
                 <li><a href="../templates/<?=$nav1?>"><?=$titleNav1?></a></li>
                 <li><a href="../templates/<?=$nav2?>"><?=$titleNav2?></a></li>
-                <li><a href="../templates/<?=$nav3?>"><?=$titleNav3?></a></li>
+                <li><a href="../templates/<?=$nav2?>"><?=$titleNav3?></a></li>
             </ul>
         </nav>
     </header>
