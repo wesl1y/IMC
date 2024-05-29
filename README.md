@@ -8,6 +8,20 @@ Vivemos em uma época onde a saúde e o bem-estar estão em alta, e muitas pesso
 
 Nossa solução visa fornecer uma maneira fácil e acessível para que qualquer pessoa possa verificar seus níveis corporais, ajudando-as a compreender melhor sua saúde e tomar decisões informadas sobre seu estilo de vida.
 
+Neste projeto, criamos uma ferramenta prática e eficiente para calcular o IMC, um indicador importante que relaciona o peso e a altura de uma pessoa para avaliar sua condição de peso. O cálculo do IMC é uma maneira simples de monitorar a saúde, mas entendemos que, sozinho, ele pode não refletir toda a complexidade do estado de saúde de um indivíduo. Por isso, decidimos utilizar a equação de SIRI, adequada para populações jovens e que não exige equipamentos complexos como a bioimpedância elétrica.
+
+## Oque nosso projeto oferece
+
+Nosso projeto oferece uma solução acessível e eficiente para calcular o Índice de Massa Corporal (IMC), proporcionando uma experiência digital simples. Ele permite o monitoramento do peso e da saúde, facilitando o cálculo e a avaliação do IMC. Além disso, serve como ferramenta educativa, promovendo uma abordagem holística à saúde e ao bem-estar, com uma forma fácil e precisa de interpretar os resultados do IMC.
+
+## Estrutura do Software
+
+A escolha de HTML, CSS e PHP para criar o site se deve às suas características complementares. HTML estrutura o conteúdo da página, definindo elementos como formulários e textos. CSS estiliza esses elementos, melhorando a apresentação visual e garantindo uma experiência agradável e responsiva. PHP, uma linguagem de programação do lado do servidor, permite funcionalidades dinâmicas, como o processamento dos dados do usuário para calcular o IMC e gerar resultados personalizados.
+
+## Metodologia de trabalho
+
+Primeiro, definimos detalhadamente os requisitos funcionais e não funcionais, considerando as necessidades dos usuários e os objetivos do projeto. Depois, configuramos o ambiente de desenvolvimento. O design da interface foi criado com foco na usabilidade e clareza das informações. Em seguida, implementamos funcionalidades essenciais para o cálculo do IMC, incluindo validação de dados, processamento do cálculo e exibição dos resultados. Realizamos testes unitários e de integração para garantir a responsividade do site em diversos dispositivos e navegadores. Seguimos uma metodologia ágil para uma abordagem flexível e adaptativa.
+
 ## Funcionalidades
 
 - Cálculo do Índice de Massa Corporal (IMC).
