@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Utils;
+Use App\Models\Data;
 
 class IMCUtils
 {
@@ -45,5 +46,33 @@ class IMCUtils
         }
 
         return $result->merge($left)->merge($right);
+    }
+    private static function obterStatusIMC($imc) {
+        $id = null;
+        if($imc <18.5){
+            $id = 1;
+        }
+        else if($imc >18.5 && $imc <25.0){
+            $id = 2;
+        }
+        
+        else if($imc >=25 && $imc <= 29){
+            $id = 3;
+        }
+        else if($imc >=30 && $imc <= 34.9){
+            $id = 4;
+        }
+        else if($imc >=35 && $imc <= 39.9){
+            $id = 5;
+        }
+        else{
+            $id = 6;
+        }
+        
+
+        echo Data::find($id)->status;
+        return Data::find($id)->status;
+        
+
     }
 }

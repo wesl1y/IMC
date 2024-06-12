@@ -1,10 +1,15 @@
 <?php
 use App\Utils\IMCUtils;
+Use App\Models\Data;
+
 
 $status = "";
 $color = "rgb(196, 174, 174)";
 $description = "";
 $gordura_corporal = null;
+
+
+
 
 
 if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['altura']) && isset($_GET['peso']) && isset($_GET['sexo']) && isset($_GET['cintura']) && isset($_GET['idade'])) {
@@ -19,13 +24,34 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['altura']) && isset($_GET
 
     $gordura_corporal = IMCUtils::calcularGorduraCorporal($sexo, $cintura, $altura, $pescoco, $quadril);
     $gordura_corporal = number_format($gordura_corporal, 2);
-
+    
     $imc = IMCUtils::calcularIMC($peso,$altura);
     $imc = number_format($imc, 2);
-    $statusIMC =IMCUtils:: obterStatusIMC($imc);
-    $status = $statusIMC["status"];
-    $description = $statusIMC["description"];
-    $color = $statusIMC["color"];
+    if($imc <18.5){
+        $id = 1;
+    }
+    else if($imc >18.5 && $imc <25.0){
+        $id = 2;
+    }   
+    
+    else if($imc >=25 && $imc <= 29){
+        $id = 3;
+    }
+    else if($imc >=30 && $imc <= 34.9){
+        $id = 4;
+    }
+    else if($imc >=35 && $imc <= 39.9){
+        $id = 5;
+    }
+    else{
+        $id = 6;
+    }
+    
+    $statusIMC = Data::find($id);
+    $status = $statusIMC->status;
+    $description = $statusIMC->description;
+    $color = $statusIMC->color;
+
 }
 ?>
 @include('components.header', [
