@@ -8,57 +8,20 @@ Vivemos em uma época onde a saúde e o bem-estar estão em alta, e muitas pesso
 
 Nossa solução visa fornecer uma maneira fácil e acessível para que qualquer pessoa possa verificar seus níveis corporais, ajudando-as a compreender melhor sua saúde e tomar decisões informadas sobre seu estilo de vida.
 
-Neste projeto, criamos uma ferramenta prática e eficiente para calcular o IMC, um indicador importante que relaciona o peso e a altura de uma pessoa para avaliar sua condição de peso. O cálculo do IMC é uma maneira simples de monitorar a saúde, mas entendemos que, sozinho, ele pode não refletir toda a complexidade do estado de saúde de um indivíduo. Por isso, decidimos utilizar a equação de SIRI, adequada para populações jovens e que não exige equipamentos complexos como a bioimpedância elétrica.
-
-## Oque nosso projeto oferece
-
-Nosso projeto oferece uma solução acessível e eficiente para calcular o Índice de Massa Corporal (IMC), proporcionando uma experiência digital simples. Ele permite o monitoramento do peso e da saúde, facilitando o cálculo e a avaliação do IMC. Além disso, serve como ferramenta educativa, promovendo uma abordagem holística à saúde e ao bem-estar, com uma forma fácil e precisa de interpretar os resultados do IMC.
-
-## Estrutura do Software
-
-A escolha de Laravel como framework para o projeto se deve à sua robustez e facilidade de uso. HTML estrutura o conteúdo da página, definindo elementos como formulários e textos. CSS estiliza esses elementos, melhorando a apresentação visual e garantindo uma experiência agradável e responsiva. O PHP, utilizado através do Laravel, permite funcionalidades dinâmicas e processamento de dados do usuário para calcular o IMC e gerar resultados personalizados.
-
-## Metodologia de trabalho
-
-Primeiro, definimos detalhadamente os requisitos funcionais e não funcionais, considerando as necessidades dos usuários e os objetivos do projeto. Depois, configuramos o ambiente de desenvolvimento. O design da interface foi criado com foco na usabilidade e clareza das informações. Em seguida, implementamos funcionalidades essenciais para o cálculo do IMC, incluindo validação de dados, processamento do cálculo e exibição dos resultados. Realizamos testes unitários e de integração para garantir a responsividade do site em diversos dispositivos e navegadores. Seguimos uma metodologia ágil para uma abordagem flexível e adaptativa.
-
 ## Funcionalidades
 
 - Cálculo do Índice de Massa Corporal (IMC).
 - Visualização dos percentuais corporais através de um gráfico pizza.
-- Listagem de 1000 pessoas com dados puxados do banco de dados MySQL.
-- Possibilidade de calcular e salvar o IMC e a taxa de gordura corporal no banco de dados.
-- Organização da listagem pela taxa de gordura corporal.
 
 ## Requisitos
 
 - PHP 8.1.27
-- Laravel 9.x
-- MySQL
 - JavaScript para visualização do gráfico pizza
 
 ## Configuração do Ambiente de Desenvolvimento
 
-Para simplificar a configuração do ambiente de desenvolvimento, recomendamos o uso do Laravel Homestead ou Laravel Sail e o Xampp para facilitar a instalação do PHP e MYSQL.
-### Instalação do Laravel
-- Certifique-se de ter o Composer instalado.
+Para simplificar a configuração do ambiente de desenvolvimento, recomendamos o uso do Xampp. O Xampp é uma ferramenta que instala automaticamente um servidor web (Apache) e o PHP em seu sistema, permitindo que você execute aplicativos PHP localmente em sua máquina.
 
-- Crie um novo projeto Laravel ou clone este repositório.
-
-- Configure o arquivo .env com as credenciais do banco de dados MySQL.
-
-- Execute as migrações para criar as tabelas no banco de dados:
-```sh
-php artisan migrate
-```
-- Faça a população do banco:  
-```sh
-php artisan db:seed
-```
-- Inicie o servidor de desenvolvimento:
-  ```sh
-php artisan serve
-```
 ### Instalação do Xampp
 
 1. Faça o download do Xampp no [site oficial](https://www.apachefriends.org/index.html).
@@ -79,11 +42,11 @@ Para informações mais detalhadas sobre o Xampp, consulte a [documentação ofi
 ## Como usar
 
 1. Clone este repositório para o seu ambiente local.
-2. Configure o banco de dados MySQL no arquivo .env.
-3. Certifique-se de ter o PHP 8.1.27 e Laravel instalados em sua máquina.
-4. Abra o projeto em seu navegador.
-5. Acesse a rota desejada.
-
+2. Certifique-se de ter o PHP 8.1.27 instalado em sua máquina.
+3. Abra o projeto em seu navegador.
+4. Insira seus dados pessoais (altura e peso) no formulário.
+5. Clique em "Calcular" para obter seu IMC e percentuais corporais.
+6. Os resultados serão exibidos na tela, incluindo um gráfico pizza para uma visualização mais clara dos percentuais corporais.
 
 ## Contribuição
 
